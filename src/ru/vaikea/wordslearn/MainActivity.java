@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
         btn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				WordsSync.doSync();				
+				WordsSync.doSync(MainActivity.this);				
 			}
 		});
         

@@ -14,6 +14,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import android.R;
+import android.content.Context;
 import android.util.Log;
 
 public class WordsSync {
@@ -21,7 +22,7 @@ public class WordsSync {
 	public static final int WS_OK = 0;
 	public static final int WS_NETERROR = 1;	
 	
-	public static final int doSync(){
+	public static final int doSync(final Context context){
 		new Thread(){
 			@Override
 			public void run(){
@@ -40,7 +41,7 @@ public class WordsSync {
 					
 					JSONArray ja = new JSONArray(sb.toString());
 					
-					
+					Words.importJSONarray(ja, context);
 					
 					
 				} catch(MalformedURLException  e){

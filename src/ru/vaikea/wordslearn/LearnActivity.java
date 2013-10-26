@@ -1,8 +1,6 @@
 package ru.vaikea.wordslearn;
 
-
 import com.example.test.R;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
