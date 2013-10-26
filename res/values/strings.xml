@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Учу слова!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="hello_world">Привет, мир!</string>
+    <string name="btnLearn">Учить</string>
+    <string name="btnTest">Проработать</string>
+    <string name="chkStartTimer">Использовать таймер</string>
+    <string name="title_activity_learn">Изучать</string>
+    <string name="title_activity_test">Тестироваться</string>
+    <string name="btnHome">Стартовый экран</string>
+    <string name="chkSynchro">Синхронизировать</string>
+    <string name="txtGreetings">Привет, дружок! Добро пожаловать в увлекательный мир изучения слов!</string>
+    <string name="strSyncUrl">ftp://192.168.0.247/words.json</string>
+
+</resources>
