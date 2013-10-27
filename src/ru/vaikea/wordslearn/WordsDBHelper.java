@@ -10,6 +10,7 @@ public class WordsDBHelper extends SQLiteOpenHelper {
 	private static final String DB_NAME = "words";
 	public static final String TB_W_NAME = "words";	
 	public static final String TB_R_NAME = "results";
+	public static final String TB_IMPORT_NAME = "imports";
 	private static final String CREATE_W_CMD = "Create table "+TB_W_NAME+" (id integer primary key autoincrement,word text, translation text, transcription text)";
 	private static final String CREATE_R_CMD = "Create table "+TB_R_NAME+" (id integer primary key autoincrement,word_id integer, racount integer, wacount integer)";
 	

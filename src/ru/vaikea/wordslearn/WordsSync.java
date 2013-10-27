@@ -8,14 +8,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
-import java.net.URLConnection;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import android.R;
+
 import android.content.Context;
-import android.util.Log;
+
 
 public class WordsSync {
 	
@@ -27,6 +26,7 @@ public class WordsSync {
 			@Override
 			public void run(){
 				try{
+			
 					URL u = new URL("http://192.168.0.8/words.json");
 					HttpURLConnection c = (HttpURLConnection) u.openConnection();
 					c.setRequestMethod("GET");
