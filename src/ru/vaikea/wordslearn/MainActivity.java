@@ -1,14 +1,11 @@
 package ru.vaikea.wordslearn;
 
-import com.example.test.R;
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import ru.vaikea.wordslearn.R;
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
+import android.view.MenuItem;
  
 
 public class MainActivity extends Activity {
@@ -18,41 +15,27 @@ public class MainActivity extends Activity {
       
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SlidingMenu menu = new SlidingMenu(this);
-        menu.setMode(SlidingMenu.LEFT);
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        menu.setFadeDegree(0.35f);
-        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-        menu.setMenu(R.layout.sidemenu);
-        menu.setBehindWidth(200);
-        menu.setBackgroundColor(0xFF333333);
-        
-        final Button btn = (Button) findViewById(R.id.btnTest);
-        btn.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				WordsSync.doSync(MainActivity.this);				
-			}
-		});
-      
-        final Context o = this;
-        final Button btn2 = (Button) findViewById(R.id.btnLearn);
-        btn2.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(o, LearnActivity.class);	
-				startActivity(i);
-			}
-		});        
+
+        AdditionalMethods.AddSlMenu(this);
         
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
+    }
+
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+    	switch(item.getItemId()){
+    	case R.id.menuSettings:
+			Intent i = new Intent(this, UserSettings.class);	
+			startActivity(i);
+    	}
+		return true;
     }
     
 }

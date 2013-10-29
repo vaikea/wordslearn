@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.test"
+    package="ru.vaikea.wordslearn"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -31,6 +31,10 @@
             android:name="ru.vaikea.wordslearn.TestActivity"
             android:label="@string/title_activity_test" >
         </activity>
+        <activity
+            android:name="ru.vaikea.wordslearn.UserSettings"
+            android:label="@string/title_options" >
+        </activity>        
     </application>
 
 </manifest>
