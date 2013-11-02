@@ -5,6 +5,8 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.PreferenceActivity;
+import android.view.View;
+import android.widget.Button;
 import ru.vaikea.wordslearn.R;
 
 public class UserSettings extends PreferenceActivity implements OnSharedPreferenceChangeListener {
@@ -13,8 +15,20 @@ public class UserSettings extends PreferenceActivity implements OnSharedPreferen
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.settings);
+		setContentView(R.layout.pref_layout);
 		AdditionalMethods.AddSlMenu(this);
+		
 		getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
+		
+		Button b = (Button) findViewById(R.id.btnDelDB);
+		b.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				WordsSync.delDB(UserSettings.this);
+			}
+		});
+		
 	}
 
 	@Override

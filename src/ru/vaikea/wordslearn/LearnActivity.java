@@ -20,9 +20,14 @@ public class LearnActivity extends Activity {
 	
 	void showNextRndWord(){
         WordObject wo = Words.getRndWord(this);
+        if(wo==null)
+        	return;
         setTextInTV(R.id.tvWord, wo.word);
         setTextInTV(R.id.tvTranscript, wo.transcription);
-        setTextInTV(R.id.tvTranslation, wo.translation);		
+        String s = "";
+        for(String ss:wo.translation)
+        	s = s + ss + ", ";
+        setTextInTV(R.id.tvTranslation, s);		
 	}
 	
     @Override

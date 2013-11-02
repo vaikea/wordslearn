@@ -17,5 +17,7 @@
     <string name="title_options">Настройки</string>
     <string name="chckSync">Sync</string>
     <string name="txtSync">Синхронизировать</string>
+    <string name="btnDelDB">Очистить БД</string>
+    <string name="strWebSyncServer">http://t.ar-go.spb.ru/words_new.json</string>
 
 </resources>

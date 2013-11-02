@@ -14,6 +14,7 @@ import org.json.JSONException;
 
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 
 public class WordsSync {
@@ -27,7 +28,7 @@ public class WordsSync {
 			public void run(){
 				try{
 			
-					URL u = new URL("http://192.168.0.8/words.json");
+					URL u = new URL(context.getResources().getString(R.string.strWebSyncServer));
 					HttpURLConnection c = (HttpURLConnection) u.openConnection();
 					c.setRequestMethod("GET");
 					c.connect();
@@ -57,4 +58,11 @@ public class WordsSync {
 		}.start();
 		return WS_OK;
 	}
+
+	public static final void delDB(Context context){
+		SQLiteDatabase wdb = Words.getWordsDb(context);
+		wdb.execSQL("delete from "+WordsDBHelper.TB_W_NAME);
+		wdb.execSQL("delete from "+WordsDBHelper.TB_TR_NAME);		
+	}
+	
 }
